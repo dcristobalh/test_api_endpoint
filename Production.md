@@ -68,9 +68,28 @@ To scale the application vertically in this case you would simply have to increa
 
 ### Horizontal scaling
 
-To scale the application horizontally in this case by being behind a proxy would simply add containers with the application and configure them in the nginx conf.
+To scale the application horizontally in this case by being behind a proxy would simply add containers with the application and configure them in the nginx conf. We need to configure nginx as a balancer too.
 
 ----
 
 ## Logging
 
+For the logging part we can locate the container and execute the following command:
+
+```sh
+docker logs -f <container name/id>
+```
+
+If we want something more sophisticated we could centralize the logs with tools such as loki or the elk stack.
+
+----
+
+## Observability
+
+For the observability we could apply prometheus stack or/and elk stack. Regarding the question, in my opinion the most important metrics are all those concerning the application and its service and the environment where it has been deployed, for example the metrics of the number of requests to the api (maybe an api gateway like Kong would be good). On the other hand, I think that all the information we can get can help us.
+
+----
+
+## Monitoring
+
+To monitor the application I would use prometheus to collect the metrics, cadvisor to expose the metrics of the docker server and its containers to prometheus, and alertmanager for alerts. To visualize the alerts I would use Grafana and create/modify panels. This is what I would do because I have some background with prometheus stack but I wouldn't mind learning ELK stack.
