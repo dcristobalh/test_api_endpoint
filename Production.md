@@ -11,6 +11,8 @@ I have opted for a microservices architecture because it is much faster, which i
 
 ![Alt text](/images/1.png?raw=true "Deploy command")
 
+As part of the deployment, unit tests to the code and load tests can be performed with CI/CD tools.Examples of continuous integration in this case is to use github actions and perform tasks by installing the most famous modules pytest and unittest or for load testing locust, which simulates several users at the same time.
+
 
 #### ***Alternatives***
 I could have opted for **kubernetes** if I had gone with the microservices approach with an yaml file and the command:
