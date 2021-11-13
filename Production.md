@@ -1,7 +1,7 @@
 # Documentation
 ## Deployment
 
-![Alt text](/images/3.png?raw=true "File distribution")
+![Alt text](/images/6.png?raw=true "File distribution")
 
 I have decided to use docker with docker-compose. Of course you need to have docker and docker-compose installed. You just need to execute:
 ```sh
