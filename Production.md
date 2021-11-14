@@ -3,15 +3,24 @@
 
 ![Alt text](/images/6.png?raw=true "File distribution")
 
-I have decided to use docker with docker-compose. Of course you need to have docker and docker-compose installed. You just need to execute:
+I have decided to use docker with docker-compose. Of course you need to have docker and docker-compose installed. You just need to clone the repository and execute:
 ```sh
 docker-compose up -d
 ```
+
+In order to test that everything has gone well, we execute the following command:
+```sh
+curl -k https://localhost/helloworld
+```
+![Alt text](/images/7.png?raw=true "Poc curl command")
+
+
 I have opted for a microservices architecture because it is much faster, which is one of its great advantages.
 
 ![Alt text](/images/1.png?raw=true "Deploy command")
 
 As part of the deployment, unit tests to the code and load tests can be performed with CI/CD tools.Examples of continuous integration in this case is to use github actions and perform tasks by installing the most famous modules pytest and unittest or for load testing locust, which simulates several users at the same time.
+
 
 
 #### ***Alternatives***
@@ -51,6 +60,8 @@ In the dockerfile we simply install the latest nginx image and copy the configur
 ![Alt text](/images/4.png?raw=true "Nginx Dockerfile")
 
 As for the configuration file, it has more things. In this case we can differentiate the listening part of port 80 and 443. In each of them we make a proxy_pass to our backend application, in the case of https we need the certificates. A commonly used self-signed certificate option is ***certbot*** with letsencrypt.
+
+In this case, to automate the process I have chosen to use a bash script to get the .key and .crt certificates and later point to them in the nginx configuration file
 
 ![Alt text](/images/5.png?raw=true "Nginx conf file")
 
