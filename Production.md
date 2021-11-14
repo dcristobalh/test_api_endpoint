@@ -3,15 +3,24 @@
 
 ![Alt text](/images/6.png?raw=true "File distribution")
 
-I have decided to use docker with docker-compose. Of course you need to have docker and docker-compose installed. You just need to execute:
+I have decided to use docker with docker-compose. Of course you need to have docker and docker-compose installed. You just need to clone the repository and execute:
 ```sh
 docker-compose up -d
 ```
+
+In order to test that everything has gone well, we execute the following command:
+```sh
+curl -k https://localhost/helloworld
+```
+![Alt text](/images/7.png?raw=true "Poc curl command")
+
+
 I have opted for a microservices architecture because it is much faster, which is one of its great advantages.
 
 ![Alt text](/images/1.png?raw=true "Deploy command")
 
 As part of the deployment, unit tests to the code and load tests can be performed with CI/CD tools.Examples of continuous integration in this case is to use github actions and perform tasks by installing the most famous modules pytest and unittest or for load testing locust, which simulates several users at the same time.
+
 
 
 #### ***Alternatives***
