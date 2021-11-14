@@ -52,6 +52,8 @@ In the dockerfile we simply install the latest nginx image and copy the configur
 
 As for the configuration file, it has more things. In this case we can differentiate the listening part of port 80 and 443. In each of them we make a proxy_pass to our backend application, in the case of https we need the certificates. A commonly used self-signed certificate option is ***certbot*** with letsencrypt.
 
+In this case, to automate the process I have chosen to use a bash script to get the .key and .crt certificates and later point to them in the nginx configuration file
+
 ![Alt text](/images/5.png?raw=true "Nginx conf file")
 
 #### ***Alternatives***
