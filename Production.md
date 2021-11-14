@@ -1,4 +1,7 @@
 # Documentation
+## Architecture diagram
+![Alt text](/images/8.png?raw=true "File distribution")
+
 ## Deployment
 
 ![Alt text](/images/6.png?raw=true "File distribution")
